@@ -15,7 +15,7 @@
 #
 from typing import MutableMapping, MutableSequence
 
-import google.apps.script.type # type: ignore
+import google.apps.script.type  # type: ignore
 import google.apps.script.type.calendar
 import google.apps.script.type.docs
 import google.apps.script.type.drive
@@ -408,10 +408,12 @@ class AddOns(proto.Message):
         number=5,
         message=google.apps.script.type.drive.types.DriveAddOnManifest,
     )
-    calendar: google.apps.script.type.calendar.types.CalendarAddOnManifest = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        message=google.apps.script.type.calendar.types.CalendarAddOnManifest,
+    calendar: google.apps.script.type.calendar.types.CalendarAddOnManifest = (
+        proto.Field(
+            proto.MESSAGE,
+            number=6,
+            message=google.apps.script.type.calendar.types.CalendarAddOnManifest,
+        )
     )
     docs: google.apps.script.type.docs.types.DocsAddOnManifest = proto.Field(
         proto.MESSAGE,
