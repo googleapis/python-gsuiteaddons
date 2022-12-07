@@ -437,4 +437,4 @@ class AddOns(proto.Message):
     )
 
 
-__all__ = tuple(sorted(__protobuf__.manifest)
+__all__ = tuple(sorted(__protobuf__.manifest))
