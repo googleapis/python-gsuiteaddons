@@ -17,13 +17,13 @@ from __future__ import annotations
 
 from typing import MutableMapping, MutableSequence
 
-from google.apps.script.type import script_manifest_pb2  # type: ignore
-from google.apps.script.type.calendar import calendar_addon_manifest_pb2  # type: ignore
-from google.apps.script.type.docs import docs_addon_manifest_pb2  # type: ignore
-from google.apps.script.type.drive import drive_addon_manifest_pb2  # type: ignore
-from google.apps.script.type.gmail import gmail_addon_manifest_pb2  # type: ignore
-from google.apps.script.type.sheets import sheets_addon_manifest_pb2  # type: ignore
-from google.apps.script.type.slides import slides_addon_manifest_pb2  # type: ignore
+import google.apps.script.type  # type: ignore
+import google.apps.script.type.calendar
+import google.apps.script.type.docs
+import google.apps.script.type.drive
+import google.apps.script.type.gmail
+import google.apps.script.type.sheets
+import google.apps.script.type.slides
 from google.protobuf import wrappers_pb2  # type: ignore
 import proto  # type: ignore
 
@@ -375,65 +375,67 @@ class AddOns(proto.Message):
     r"""A Google Workspace Add-on configuration.
 
     Attributes:
-        common (google.apps.script.type.script_manifest_pb2.CommonAddOnManifest):
+        common (google.apps.script.type.types.CommonAddOnManifest):
             Configuration that is common across all
             Google Workspace Add-ons.
-        gmail (google.apps.script.type.gmail.gmail_addon_manifest_pb2.GmailAddOnManifest):
+        gmail (google.apps.script.type.gmail.types.GmailAddOnManifest):
             Gmail add-on configuration.
-        drive (google.apps.script.type.drive.drive_addon_manifest_pb2.DriveAddOnManifest):
+        drive (google.apps.script.type.drive.types.DriveAddOnManifest):
             Drive add-on configuration.
-        calendar (google.apps.script.type.calendar.calendar_addon_manifest_pb2.CalendarAddOnManifest):
+        calendar (google.apps.script.type.calendar.types.CalendarAddOnManifest):
             Calendar add-on configuration.
-        docs (google.apps.script.type.docs.docs_addon_manifest_pb2.DocsAddOnManifest):
+        docs (google.apps.script.type.docs.types.DocsAddOnManifest):
             Docs add-on configuration.
-        sheets (google.apps.script.type.sheets.sheets_addon_manifest_pb2.SheetsAddOnManifest):
+        sheets (google.apps.script.type.sheets.types.SheetsAddOnManifest):
             Sheets add-on configuration.
-        slides (google.apps.script.type.slides.slides_addon_manifest_pb2.SlidesAddOnManifest):
+        slides (google.apps.script.type.slides.types.SlidesAddOnManifest):
             Slides add-on configuration.
-        http_options (google.apps.script.type.script_manifest_pb2.HttpOptions):
+        http_options (google.apps.script.type.types.HttpOptions):
             Options for sending requests to add-on HTTP
             endpoints
     """
 
-    common: script_manifest_pb2.CommonAddOnManifest = proto.Field(
+    common: google.apps.script.type.types.CommonAddOnManifest = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=script_manifest_pb2.CommonAddOnManifest,
+        message=google.apps.script.type.types.CommonAddOnManifest,
     )
-    gmail: gmail_addon_manifest_pb2.GmailAddOnManifest = proto.Field(
+    gmail: google.apps.script.type.gmail.types.GmailAddOnManifest = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gmail_addon_manifest_pb2.GmailAddOnManifest,
+        message=google.apps.script.type.gmail.types.GmailAddOnManifest,
     )
-    drive: drive_addon_manifest_pb2.DriveAddOnManifest = proto.Field(
+    drive: google.apps.script.type.drive.types.DriveAddOnManifest = proto.Field(
         proto.MESSAGE,
         number=5,
-        message=drive_addon_manifest_pb2.DriveAddOnManifest,
+        message=google.apps.script.type.drive.types.DriveAddOnManifest,
     )
-    calendar: calendar_addon_manifest_pb2.CalendarAddOnManifest = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        message=calendar_addon_manifest_pb2.CalendarAddOnManifest,
+    calendar: google.apps.script.type.calendar.types.CalendarAddOnManifest = (
+        proto.Field(
+            proto.MESSAGE,
+            number=6,
+            message=google.apps.script.type.calendar.types.CalendarAddOnManifest,
+        )
     )
-    docs: docs_addon_manifest_pb2.DocsAddOnManifest = proto.Field(
+    docs: google.apps.script.type.docs.types.DocsAddOnManifest = proto.Field(
         proto.MESSAGE,
         number=7,
-        message=docs_addon_manifest_pb2.DocsAddOnManifest,
+        message=google.apps.script.type.docs.types.DocsAddOnManifest,
     )
-    sheets: sheets_addon_manifest_pb2.SheetsAddOnManifest = proto.Field(
+    sheets: google.apps.script.type.sheets.types.SheetsAddOnManifest = proto.Field(
         proto.MESSAGE,
         number=8,
-        message=sheets_addon_manifest_pb2.SheetsAddOnManifest,
+        message=google.apps.script.type.sheets.types.SheetsAddOnManifest,
     )
-    slides: slides_addon_manifest_pb2.SlidesAddOnManifest = proto.Field(
+    slides: google.apps.script.type.slides.types.SlidesAddOnManifest = proto.Field(
         proto.MESSAGE,
         number=10,
-        message=slides_addon_manifest_pb2.SlidesAddOnManifest,
+        message=google.apps.script.type.slides.types.SlidesAddOnManifest,
     )
-    http_options: script_manifest_pb2.HttpOptions = proto.Field(
+    http_options: google.apps.script.type.types.HttpOptions = proto.Field(
         proto.MESSAGE,
         number=15,
-        message=script_manifest_pb2.HttpOptions,
+        message=google.apps.script.type.types.HttpOptions,
     )
 
 
